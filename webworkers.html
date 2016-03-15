@@ -20,17 +20,17 @@
  </body>
 
  <script>
-  function buscarPrimos(){
 
-     document.getElementById("enviar").addEventListener("click",function(){
-       myWorker.postMessage(parseInt(document.getElementById("formulario").input.value));
-       console.log("enviado");
-     });
-     myWorker.onmessage = function (Event) {
-       console.log("recibo");
-       document.getElementById('result').innerHTML = Event.data;
-     };
-  }
+    document.getElementById("enviar").addEventListener("click",function(){
+      myWorker.postMessage(parseInt(document.getElementById("formulario").input.value));
+    });
+
+    function buscarPrimos(){
+      myWorker.onmessage = function (Event) {
+      console.log("recibo");
+      document.getElementById('result').innerHTML = Event.data;
+      };
+    }
  </script>
 
 </html>

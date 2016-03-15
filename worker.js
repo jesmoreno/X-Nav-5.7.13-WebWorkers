@@ -1,6 +1,4 @@
 
-postMessage("I'm working");
-
 onmessage = function (Event) {
 
     var n = 1;
